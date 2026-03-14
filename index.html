@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Maison-Interior Living</title>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond :ital,wght@0,300;0,400;1,300&family;=jost:wght@300;400;500&display;=swapn"rel="stylesheet"/>
+        <style>
+            /*RESET: removes browser default spacing*/
+            *,*::before, *::after{
+                box-sizing: border-box; 
+                margin:0;
+                padding:0;
+            }
+            /* COLOR VARIABLES*/
+            .root{
+                --cream:#f7f4ef; /*page background*/
+                --dark:#1c1a18; /*text&buttons*/
+                --warm:#8b6f47; /*hover states*/
+                --light:#e8e2d9;/*section backgrounds*/
+                --accent:#c4956a; /*orange-gold highlights*/
+            }
+                /*BODY*/
+                body{
+                    font-family: "jost",sans-serif;
+                    background: var(cream);
+                    color: var(--dark);
+                    font-weight: 300;
+                }
+                /*IMAGES always fill their  container*/
+                img{
+                    width:100%;
+                    object-fit: cover;
+                    display:block
+                }
+            
+        .navbar {
+            display: flex; /*puts children in a row */
+            align-items: center;  /*vertically centres them */
+            justify-content: space-between; /*pushes them apart*/
+            padding: 1.2rem 5%;
+            background: #f7f4ef;
+            position: sticky; top:0; /*stays at top when scrolling*/
+            z-index: 100;
+            border-bottom: 1px solid #e8e2d9;
+        }
+        .nav-logo {font-size: 1.8rem; font-family: serif;}
+        .nav-links{ display: flex; list-style: none; gap: 2.5rem;}
+        .nav-links a { text-decoration: none;color: #1c1a18; font-size: 0.85rem; text-transform: uppercase; letter-spacing:0.08;}
+        .nav-links a:hover {color:#c4956a;}
+        .nav-btn {background:#1c1a18; color:#f7f4ef; border: none;padding:0.65rem 1.4rem; cursor: pointer;}
+.hero {
+    display: flex; /*two-column layout*/
+    align-items: center;
+    gap: 4rem;
+    padding: 6rem 5%
+    min-height;  /*takes up most of the screen*/
+}
+.hero-content {
+    flex: 1; /*takes up equal space as image*/
+    display: flex;
+    flex-direction: column; /*stacks children vertically*/
+    gap: 1.5rem;
+}
+.hero-content h1{ font-size: clamp(2.8rem,5vw,5rem); font-weight:300;}
+.hero-content h1 em { color:#c4956a; font-style: italic;}
+.hero.sub{ font-size: 1rem; color:#666; line-height:1.7;}
+.hero-tag{ font-size: 0.15rem; color:#c4956a;}
+.hero-btns{ display:  flex; gap: 1rem;}
+.hero-image{ flex:1;height:72 vh; overflow:hidden;}
+.hero-image img {width: 100%; height: 100%; object-fit: cover;}
+.btn-primary{background: #1c1a18;color:#f7f4ef; border: none; padding: 0.8rem 2rem; cursor:pointer;text-transform:uppercase;}
+.btn-ghost{background:transparent; border: 1px solid #1c1a18; padding:0.8rem 2rem; cursor:pointer;text-transform:uppercase;} 
+.strip{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.2rem 5%;
+    background: #1c1a18; /*dark background*/
+    color: #f7f4ef;
+    font-size:o.8ren;
+    letter-spacing:0.12rem;
+    text-transform: uppercase;
+}
+.split section {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding: 7rem 5%;
+}
+.split-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.split-text h2{font-size: clamp(2rem,3.5vw,3.2rem); font-weight:300;}
+.split-image img {width: 100%; height:100%;object-fit:cover;}
+.label {font-size:0.75rem; text-transform: uppercase;letter-spacing: 0.18em;color:#c4956a;}
+products {padding: 5rem 5%; background: #e8e2d9; }
+products-header {display: flex;justify-content: space-between align-items: baseline; margin-bottom: 2.5rem;}
+.products-header h2 {font-size: 2.5rem; font-weight: 300;}
+.product-header a {color:#c4956a; text-decoration: none;}
+.product-grid { display: flex;gap: 1.5rem; height:65vh;}
+.product-card {flex:1;position:relative;overflow: hidden;}
+.product-card.tall{flex:1.4;}  /*first card is wider*/
+product-card img {width:100%;height: 100%; object-fit:cover;transition:transform0.6s ease;}
+.product-card:hover img{transform: scale(1.05); } /*zoom on hover*/
+.card-info{
+    position: absolute; /*sits on top of image*/
+    bottom: 0;left:0;right:0;padding:2rem 1.5rem 1.5rem;background: linear-gradient(transparent,rgba(28,26,24,0.75));color:white;
+}
+.card-info span{font-size:0.7rem;text-transform:uppercase;opacity:0.8;}
+.card-info h3{font-size:1.4rem;font-weight:300;margin-top:0.3rem;}
+.banner{
+    height: 55vh; background-image: url(*images/reading-nook.jpg.jpg*);
+}
+.banner-overlay{
+    display:flex;flex-direction: column;align-items:center;gap: 1.5rem;text-align: center;background:rgba(28,26,24,0,55); /*dark semi-transparent overlay*/
+    padding: 4rem 6rem;color:#f7f4ef;
+}
+.banner-overlay h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:300;}
+.btn-light{background:#f7f4ef; color:#1c1a18;border:none;padding:0.8rem 2rem;cursor:pointer;text-transform:uppercase; }
+.footer{
+    display: flex;justify-content: space-between;align-items: flex-start;padding:4rem 5%;background:#1c1a18;color:#f7f4ef;gap:3rem}
+.footer-brand h3{font-size:0.8rem;opacity:0.6;}
+.footer-links{display:flex;flex-direction:column;gap:0.8rem;font-size:0.85rem;opacity:0.7;}
+.footer-copy{align-self: flex-end;font-size:0.8rem;opacity:0.6;}
+        </style>
+    </head>
+    <body>
+        <marquee>masion-website</marquee>
+
+        <nav class="navbar">
+            <div class="nav-logo">Maison</div>
+            <ul class="nav-links">
+                <li><a href="collections.html""id=active">collections</a></li>
+                <li><a href="rooms.html""id=active">rooms</a></li>
+                <li><a href="About.html""id=Active">About</a></li>
+                <li><a href="Contact.html""id=Active">Contact</a></li>
+                </ul>
+                <button class="nav-btn">Explore Now</button>
+        </nav>
+        <section id="collections">
+            <h2>collections</h2>
+
+        </section>
+        <section class="hero">
+            <!--LEFT SIDE: text content-->
+            <div class="hero-content">
+                <p class="hero-tag".New Collection 2026</p>
+                    <h1>Where comfort <em> meets </em> design</h1>
+                    <p class="hero-sub">Curated furniture for spaces that feel like home.</p>
+                    <div class="hero-btns">
+                        <button class="btn-primary">Shop Now</button>
+                        <button class="btn-ghost">view lookbook</button>
+                    </div>
+
+                </div>
+                <!--RIGHT SIDE: image-->
+                <div class="hero-image">
+                    <img src="image/chair.pg.jpg"alt="Featured Chair"/>
+                </div>
+        </section> 
+        <div class="strip">
+            <span> Free Shipping over $500 </span>
+            <span> . </span>
+            <span> Handcrafted Quality </span>
+            <span> . </span>
+            <span> 30-Day Returns </span>
+        </div>
+        <section class="split-section">
+            <div class="split-text">
+                <p class="label">Our Story</p>
+                <h2>Thoughtfully designed for modern living</h2>
+                <p>Every piece is chosen with intention-blending form,function, and lasting beauty.</p>
+                <button class="btn-primary">Discover More</button>
+                </div>
+                <div class="split-image">
+                    <img src="image/living-blue.jpg.jpg"alt="living room"/>
+            </div>
+        </section>
+        <section class="products">
+            <div class="products-header">
+            <h2>Featured Rooms</h2>
+            <a href="#">View All</a>
+            </div>
+            <div class="product-grid">
+                <div class="product-card tall">
+                    <img src="image/media-room.jpg.jpg"alt="Media Room" />
+                    <div class="card-info">
+                        <span>Media Room</span>
+                        <h3>Warm Bohemian Vibes</h3>
+                    </div>
+            </div>
+            <div class="product-card">
+                <img src="image/living-blue.jpg.jpg"alt="Living Room" />
+                <div class="card-info">
+                    <span>Living Room</span>
+                    <h3>Classic Blue Elegance</h3>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="image/chair.pg.jpg" alt="Accent chair" />
+                <div class="card-info">
+                    <span>Accent Pieces</span>
+                    <h3>The Arc Chair</h3>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="banner-overlay">
+                <p class="label" style="color: #c4956a;">Limited Collection</p>
+                <h2>Bring warmth into every corner</h2>
+                <button class="btn-light">Shop The Edit</button>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand">
+                <p>Interiors for the thoughtful home</p>
+            </div>
+            <div class="footer-links">
+                <p>Collections</p>
+                <p>Rooms</p>
+                <p>About</p>
+                <p>Contact</p>
+            </div>
+<div class="footer-copy">
+    <p>@2026 Maison.All rights reserved</p>
+</div>
+        </footer>
+        <marquee>masion-website</marquee>
+</body>
+    </body>
+</html>

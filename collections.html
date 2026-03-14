@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collections — Maison Furniture Holders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --cream: #f5f0e8; --dark: #1a1710; --gold: #c9a84c; --gold-light: #e8d5a3; --warm: #8b7355; --off-white: #faf8f3; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--off-white); color: var(--dark); font-family: 'Tenor Sans', sans-serif; overflow-x: hidden; }
+    .marquee-bar { background: var(--dark); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 8px 0; overflow: hidden; }
+    .navbar { position: sticky; top: 0; z-index: 100; background: rgba(250,248,243,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 72px; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; letter-spacing: 0.2em; color: var(--dark); text-transform: uppercase; text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-btn { background: var(--dark); color: var(--gold); border: none; padding: 10px 24px; font-family: 'Tenor Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+    .nav-btn:hover { background: var(--gold); color: var(--dark); }
+    .page-hero { background: var(--dark); padding: 6rem 8vw 4rem; }
+    .page-hero-label { font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+    .page-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; color: var(--cream); line-height: 1.1; }
+    .page-hero-title em { font-style: italic; color: var(--gold); }
+    .page-hero-sub { color: rgba(245,240,232,0.45); font-size: 0.88rem; line-height: 1.8; max-width: 500px; margin-top: 1.2rem; }
+    .collections-section { padding: 5rem 8vw; }
+    .collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+    .collection-card { cursor: pointer; }
+    .collection-img { aspect-ratio: 3/4; position: relative; overflow: hidden; }
+    .c1 { background: linear-gradient(160deg, #1e1a14 0%, #2d2416 100%); }
+    .c2 { background: linear-gradient(160deg, #16181e 0%, #1e2430 100%); }
+    .c3 { background: linear-gradient(160deg, #1a1616 0%, #2a1e1e 100%); }
+    .collection-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+    .collection-card:hover .collection-img img { transform: scale(1.05); }
+    .collection-pattern { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: rgba(201,168,76,0.08); }
+    .collection-tag { position: absolute; top: 1.2rem; left: 1.2rem; background: var(--gold); color: var(--dark); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 10px; z-index: 1; }
+    .collection-info { padding: 1.4rem 0; }
+    .collection-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .collection-desc { font-size: 0.8rem; color: var(--warm); line-height: 1.7; margin-bottom: 1rem; }
+    .collection-materials { font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(139,115,85,0.6); margin-bottom: 1rem; text-transform: uppercase; }
+    .collection-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .collection-price { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); }
+    .collection-btn { background: none; border: 1px solid var(--dark); color: var(--dark); padding: 8px 18px; font-family: 'Tenor Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+    .collection-btn:hover { background: var(--dark); color: var(--gold); }
+    footer { background: #0d0b08; padding: 3rem 8vw; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .footer-nav { display: flex; gap: 2rem; }
+    .footer-nav a { text-decoration: none; color: rgba(245,240,232,0.4); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.7rem; color: rgba(245,240,232,0.25); }
+    @media (max-width: 900px) { .collections-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .collections-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <div class="marquee-bar">
+    <marquee scrollamount="3">MAISON FURNITURE HOLDERS &nbsp;·&nbsp; WHERE COMFORT MEETS DESIGN &nbsp;·&nbsp; ARUSHA, TANZANIA &nbsp;·&nbsp; EST. 2026 &nbsp;·&nbsp; OPEN 24/7</marquee>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Maison Furniture</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="collections.html" class="active">Collections</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-btn" onclick="window.location.href='contact.html'">Order Now</button>
+  </nav>
+
+  <div class="page-hero">
+    <p class="page-hero-label">Our Furniture Collections</p>
+    <h1 class="page-hero-title">Handpicked <em>Pieces</em> for Your Home</h1>
+    <p class="page-hero-sub">Every piece is carefully selected for quality, comfort and lasting beauty — designed to transform your home into a space you truly love.</p>
+  </div>
+
+  <section class="collections-section">
+    <div class="collections-grid">
+
+      <div class="collection-card">
+        <div class="collection-img c1">
+          <div class="collection-pattern">❧</div>
+          <span class="collection-tag">Bestseller</span>
+        </div>
+        <div class="collection-info">
+          <div class="collection-name">Living Room Set</div>
+          <div class="collection-desc">A complete living room package featuring plush sofas, elegant centre tables and matching TV stands. Built for comfort and designed to impress every guest.</div>
+          <div class="collection-materials">Sofa · Centre Table · TV Stand · Curtains</div>
+          <div class="collection-footer">
+            <div class="collection-price">TZS 850,000</div>
+            <a href="contact.html" class="collection-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <div class="collection-img c2">
+          <div class="collection-pattern">✦</div>
+          <span class="collection-tag">New Arrival</span>
+        </div>
+        <div class="collection-info">
+          <div class="collection-name">Bedroom Collection</div>
+          <div class="collection-desc">Transform your bedroom into a peaceful sanctuary. Includes a king-size bed frame, wardrobe, dressing table and bedside cabinets in rich wood finish.</div>
+          <div class="collection-materials">Bed Frame · Wardrobe · Dressing Table · Cabinets</div>
+          <div class="collection-footer">
+            <div class="collection-price">TZS 1,200,000</div>
+            <a href="contact.html" class="collection-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <div class="collection-img c3">
+          <div class="collection-pattern">◈</div>
+          <span class="collection-tag">Popular</span>
+        </div>
+        <div class="collection-info">
+          <div class="collection-name">Home Decor Package</div>
+          <div class="collection-desc">Beautiful decoration pieces including wall art, decorative vases, indoor plants, mirrors and lighting accessories to give your home a refined and elegant finish.</div>
+          <div class="collection-materials">Wall Art · Vases · Mirrors · Lighting · Plants</div>
+          <div class="collection-footer">
+            <div class="collection-price">TZS 350,000</div>
+            <a href="contact.html" class="collection-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Maison Furniture Holders</div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Maison Furniture Holders — Arusha, Tanzania.</div>
+  </footer>
+
+</body>
+</html>
