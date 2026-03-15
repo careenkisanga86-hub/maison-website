@@ -1,236 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Maison-Interior Living</title>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond :ital,wght@0,300;0,400;1,300&family;=jost:wght@300;400;500&display;=swapn"rel="stylesheet"/>
-        <style>
-            /*RESET: removes browser default spacing*/
-            *,*::before, *::after{
-                box-sizing: border-box; 
-                margin:0;
-                padding:0;
-            }
-            /* COLOR VARIABLES*/
-            .root{
-                --cream:#f7f4ef; /*page background*/
-                --dark:#1c1a18; /*text&buttons*/
-                --warm:#8b6f47; /*hover states*/
-                --light:#e8e2d9;/*section backgrounds*/
-                --accent:#c4956a; /*orange-gold highlights*/
-            }
-                /*BODY*/
-                body{
-                    font-family: "jost",sans-serif;
-                    background: var(cream);
-                    color: var(--dark);
-                    font-weight: 300;
-                }
-                /*IMAGES always fill their  container*/
-                img{
-                    width:100%;
-                    object-fit: cover;
-                    display:block
-                }
-            
-        .navbar {
-            display: flex; /*puts children in a row */
-            align-items: center;  /*vertically centres them */
-            justify-content: space-between; /*pushes them apart*/
-            padding: 1.2rem 5%;
-            background: #f7f4ef;
-            position: sticky; top:0; /*stays at top when scrolling*/
-            z-index: 100;
-            border-bottom: 1px solid #e8e2d9;
-        }
-        .nav-logo {font-size: 1.8rem; font-family: serif;}
-        .nav-links{ display: flex; list-style: none; gap: 2.5rem;}
-        .nav-links a { text-decoration: none;color: #1c1a18; font-size: 0.85rem; text-transform: uppercase; letter-spacing:0.08;}
-        .nav-links a:hover {color:#c4956a;}
-        .nav-btn {background:#1c1a18; color:#f7f4ef; border: none;padding:0.65rem 1.4rem; cursor: pointer;}
-.hero {
-    display: flex; /*two-column layout*/
-    align-items: center;
-    gap: 4rem;
-    padding: 6rem 5%
-    min-height;  /*takes up most of the screen*/
-}
-.hero-content {
-    flex: 1; /*takes up equal space as image*/
-    display: flex;
-    flex-direction: column; /*stacks children vertically*/
-    gap: 1.5rem;
-}
-.hero-content h1{ font-size: clamp(2.8rem,5vw,5rem); font-weight:300;}
-.hero-content h1 em { color:#c4956a; font-style: italic;}
-.hero.sub{ font-size: 1rem; color:#666; line-height:1.7;}
-.hero-tag{ font-size: 0.15rem; color:#c4956a;}
-.hero-btns{ display:  flex; gap: 1rem;}
-.hero-image{ flex:1;height:72 vh; overflow:hidden;}
-.hero-image img {width: 100%; height: 100%; object-fit: cover;}
-.btn-primary{background: #1c1a18;color:#f7f4ef; border: none; padding: 0.8rem 2rem; cursor:pointer;text-transform:uppercase;}
-.btn-ghost{background:transparent; border: 1px solid #1c1a18; padding:0.8rem 2rem; cursor:pointer;text-transform:uppercase;} 
-.strip{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1.2rem 5%;
-    background: #1c1a18; /*dark background*/
-    color: #f7f4ef;
-    font-size:o.8ren;
-    letter-spacing:0.12rem;
-    text-transform: uppercase;
-}
-.split section {
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-    padding: 7rem 5%;
-}
-.split-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-.split-text h2{font-size: clamp(2rem,3.5vw,3.2rem); font-weight:300;}
-.split-image img {width: 100%; height:100%;object-fit:cover;}
-.label {font-size:0.75rem; text-transform: uppercase;letter-spacing: 0.18em;color:#c4956a;}
-products {padding: 5rem 5%; background: #e8e2d9; }
-products-header {display: flex;justify-content: space-between align-items: baseline; margin-bottom: 2.5rem;}
-.products-header h2 {font-size: 2.5rem; font-weight: 300;}
-.product-header a {color:#c4956a; text-decoration: none;}
-.product-grid { display: flex;gap: 1.5rem; height:65vh;}
-.product-card {flex:1;position:relative;overflow: hidden;}
-.product-card.tall{flex:1.4;}  /*first card is wider*/
-product-card img {width:100%;height: 100%; object-fit:cover;transition:transform0.6s ease;}
-.product-card:hover img{transform: scale(1.05); } /*zoom on hover*/
-.card-info{
-    position: absolute; /*sits on top of image*/
-    bottom: 0;left:0;right:0;padding:2rem 1.5rem 1.5rem;background: linear-gradient(transparent,rgba(28,26,24,0.75));color:white;
-}
-.card-info span{font-size:0.7rem;text-transform:uppercase;opacity:0.8;}
-.card-info h3{font-size:1.4rem;font-weight:300;margin-top:0.3rem;}
-.banner{
-    height: 55vh; background-image: url(*images/reading-nook.jpg.jpg*);
-}
-.banner-overlay{
-    display:flex;flex-direction: column;align-items:center;gap: 1.5rem;text-align: center;background:rgba(28,26,24,0,55); /*dark semi-transparent overlay*/
-    padding: 4rem 6rem;color:#f7f4ef;
-}
-.banner-overlay h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:300;}
-.btn-light{background:#f7f4ef; color:#1c1a18;border:none;padding:0.8rem 2rem;cursor:pointer;text-transform:uppercase; }
-.footer{
-    display: flex;justify-content: space-between;align-items: flex-start;padding:4rem 5%;background:#1c1a18;color:#f7f4ef;gap:3rem}
-.footer-brand h3{font-size:0.8rem;opacity:0.6;}
-.footer-links{display:flex;flex-direction:column;gap:0.8rem;font-size:0.85rem;opacity:0.7;}
-.footer-copy{align-self: flex-end;font-size:0.8rem;opacity:0.6;}
-        </style>
-    </head>
-    <body>
-        <marquee>masion-website</marquee>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Furniture Holders — Where Comfort Meets Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --cream: #f5f0e8; --dark: #1a1710; --gold: #c9a84c; --gold-light: #e8d5a3; --warm: #8b7355; --off-white: #faf8f3; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--off-white); color: var(--dark); font-family: 'Tenor Sans', sans-serif; overflow-x: hidden; }
+    .marquee-bar { background: var(--dark); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 8px 0; overflow: hidden; }
+    .navbar { position: sticky; top: 0; z-index: 100; background: rgba(250,248,243,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 72px; }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; letter-spacing: 0.2em; color: var(--dark); text-transform: uppercase; text-decoration: none; }
+    .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+    .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; position: relative; padding-bottom: 4px; transition: color 0.3s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a.active::after { width: 100%; }
+    .nav-btn { background: var(--dark); color: var(--gold); border: none; padding: 10px 24px; font-family: 'Tenor Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s, color 0.3s; }
+    .nav-btn:hover { background: var(--gold); color: var(--dark); }
+    .hero { min-height: 92vh; background: var(--dark); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 8vw 5vw 8vw 8vw; animation: fadeUp 1.2s ease both; }
+    .hero-label { font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 2rem; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 1.5rem; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub { color: rgba(245,240,232,0.5); font-size: 0.85rem; line-height: 1.8; max-width: 380px; margin-bottom: 3rem; }
+    .hero-cta { display: flex; gap: 1rem; align-items: center; }
+    .btn-primary { background: var(--gold); color: var(--dark); border: none; padding: 14px 36px; font-family: 'Tenor Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-ghost { color: var(--cream); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.3); padding-bottom: 2px; transition: border-color 0.3s, color 0.3s; }
+    .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+    .hero-visual { position: relative; overflow: hidden; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; display: block; }
+    .hero-stat { position: absolute; bottom: 10%; left: 10%; color: var(--cream); background: rgba(26,23,16,0.75); padding: 1rem 1.5rem; }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .hero-stat-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-top: 4px; }
+    .quick-links { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--dark); }
+    .quick-link { padding: 2.5rem 2rem; border-right: 1px solid rgba(201,168,76,0.1); text-decoration: none; display: block; transition: background 0.3s; }
+    .quick-link:last-child { border-right: none; }
+    .quick-link:hover { background: rgba(201,168,76,0.05); }
+    .quick-link-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: rgba(201,168,76,0.3); line-height: 1; margin-bottom: 0.8rem; }
+    .quick-link-name { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-bottom: 0.5rem; }
+    .quick-link-arrow { color: var(--gold); font-size: 0.8rem; }
+    .featured-section { padding: 5rem 8vw; background: var(--off-white); }
+    .section-label { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--dark); margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--warm); }
+    .divider { width: 48px; height: 1px; background: var(--gold); margin-bottom: 3rem; }
+    .image-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .img-card { position: relative; overflow: hidden; cursor: pointer; display: block; text-decoration: none; }
+    .img-card-tall { aspect-ratio: 3/4; }
+    .img-card-wide { aspect-ratio: 16/9; }
+    .img-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .img-card:hover img { transform: scale(1.05); }
+    .img-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(10,8,5,0.88) 0%, transparent 100%); }
+    .img-overlay-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); margin-bottom: 0.3rem; }
+    .img-overlay-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+    .img-overlay-price { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold-light); margin-top: 0.3rem; }
+    .cta-section { background: var(--dark); padding: 5rem 8vw; text-align: center; }
+    .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 1rem; }
+    .cta-title em { font-style: italic; color: var(--gold); }
+    .cta-sub { color: rgba(245,240,232,0.45); font-size: 0.88rem; line-height: 1.8; max-width: 500px; margin: 0 auto 2.5rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-gold { background: var(--gold); color: var(--dark); border: none; padding: 14px 36px; font-family: 'Tenor Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline { background: none; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 14px 36px; font-family: 'Tenor Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn-outline:hover { background: rgba(201,168,76,0.1); }
+    footer { background: #0d0b08; padding: 3rem 8vw; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.12); flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .footer-copy { font-size: 0.7rem; color: rgba(245,240,232,0.25); letter-spacing: 0.1em; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .hero-visual { height: 50vh; } .quick-links { grid-template-columns: 1fr 1fr; } .image-grid-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .navbar { padding: 0 4vw; } .nav-links { display: none; } .quick-links { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
 
-        <nav class="navbar">
-            <div class="nav-logo">Maison</div>
-            <ul class="nav-links">
-                <li><a href="collections.html""id=active">collections</a></li>
-                <li><a href="rooms.html""id=active">rooms</a></li>
-                <li><a href="About.html""id=Active">About</a></li>
-                <li><a href="Contact.html""id=Active">Contact</a></li>
-                </ul>
-                <button class="nav-btn">Explore Now</button>
-        </nav>
-        <section id="collections">
-            <h2>collections</h2>
+  <div class="marquee-bar">
+    <marquee scrollamount="3">MAISON FURNITURE HOLDERS &nbsp;·&nbsp; WHERE COMFORT MEETS DESIGN &nbsp;·&nbsp; ARUSHA, TANZANIA &nbsp;·&nbsp; EST. 2026 &nbsp;·&nbsp; OPEN 24/7 &nbsp;·&nbsp; CALL: 0634458627</marquee>
+  </div>
 
-        </section>
-        <section class="hero">
-            <!--LEFT SIDE: text content-->
-            <div class="hero-content">
-                <p class="hero-tag".New Collection 2026</p>
-                    <h1>Where comfort <em> meets </em> design</h1>
-                    <p class="hero-sub">Curated furniture for spaces that feel like home.</p>
-                    <div class="hero-btns">
-                        <button class="btn-primary">Shop Now</button>
-                        <button class="btn-ghost">view lookbook</button>
-                    </div>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Maison Furniture</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-btn" onclick="window.location.href='collections.html'">Shop Now</button>
+  </nav>
 
-                </div>
-                <!--RIGHT SIDE: image-->
-                <div class="hero-image">
-                    <img src="image/chair.pg.jpg"alt="Featured Chair"/>
-                </div>
-        </section> 
-        <div class="strip">
-            <span> Free Shipping over $500 </span>
-            <span> . </span>
-            <span> Handcrafted Quality </span>
-            <span> . </span>
-            <span> 30-Day Returns </span>
+  <section style="padding:0;" class="hero">
+    <div class="hero-text">
+      <span class="hero-label">Arusha, Tanzania — Est. 2026</span>
+      <h1 class="hero-title">Where Comfort<br>Meets <em>Design</em></h1>
+      <p class="hero-sub">Maison Furniture Holders brings you the finest home furniture and decoration pieces. We make your home a place you truly love.</p>
+      <div class="hero-cta">
+        <a href="collections.html" class="btn-primary">View Collections</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="hero.jpg.jpg" alt="Beautiful Home Interior by Maison Furniture"/>
+      <div class="hero-stat">
+        <div class="hero-stat-num">24/7</div>
+        <div class="hero-stat-label">Always Open</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quick-links">
+    <a href="collections.html" class="quick-link">
+      <div class="quick-link-num">01</div>
+      <div class="quick-link-name">Collections</div>
+      <div class="quick-link-arrow">→</div>
+    </a>
+    <a href="rooms.html" class="quick-link">
+      <div class="quick-link-num">02</div>
+      <div class="quick-link-name">Rooms</div>
+      <div class="quick-link-arrow">→</div>
+    </a>
+    <a href="about.html" class="quick-link">
+      <div class="quick-link-num">03</div>
+      <div class="quick-link-name">About</div>
+      <div class="quick-link-arrow">→</div>
+    </a>
+    <a href="contact.html" class="quick-link">
+      <div class="quick-link-num">04</div>
+      <div class="quick-link-name">Contact</div>
+      <div class="quick-link-arrow">→</div>
+    </a>
+  </div>
+
+  <section class="featured-section">
+    <p class="section-label">Our Spaces</p>
+    <h2 class="section-title">Furniture for Every <em>Room</em></h2>
+    <div class="divider"></div>
+
+    <div class="image-grid-2">
+      <a href="rooms.html" class="img-card img-card-tall">
+        <img src="living-blue.jpg.jpg" alt="Living Room"/>
+        <div class="img-overlay">
+          <div class="img-overlay-name">Living Room</div>
+          <div class="img-overlay-tag">Sofas · Tables · Curtains</div>
+          <div class="img-overlay-price">From TZS 850,000</div>
         </div>
-        <section class="split-section">
-            <div class="split-text">
-                <p class="label">Our Story</p>
-                <h2>Thoughtfully designed for modern living</h2>
-                <p>Every piece is chosen with intention-blending form,function, and lasting beauty.</p>
-                <button class="btn-primary">Discover More</button>
-                </div>
-                <div class="split-image">
-                    <img src="image/living-blue.jpg.jpg"alt="living room"/>
-            </div>
-        </section>
-        <section class="products">
-            <div class="products-header">
-            <h2>Featured Rooms</h2>
-            <a href="#">View All</a>
-            </div>
-            <div class="product-grid">
-                <div class="product-card tall">
-                    <img src="image/media-room.jpg.jpg"alt="Media Room" />
-                    <div class="card-info">
-                        <span>Media Room</span>
-                        <h3>Warm Bohemian Vibes</h3>
-                    </div>
-            </div>
-            <div class="product-card">
-                <img src="image/living-blue.jpg.jpg"alt="Living Room" />
-                <div class="card-info">
-                    <span>Living Room</span>
-                    <h3>Classic Blue Elegance</h3>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="image/chair.pg.jpg" alt="Accent chair" />
-                <div class="card-info">
-                    <span>Accent Pieces</span>
-                    <h3>The Arc Chair</h3>
-                </div>
-            </div>
-            </div>
-        </section>
-        <section class="banner">
-            <div class="banner-overlay">
-                <p class="label" style="color: #c4956a;">Limited Collection</p>
-                <h2>Bring warmth into every corner</h2>
-                <button class="btn-light">Shop The Edit</button>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="footer-brand">
-                <p>Interiors for the thoughtful home</p>
-            </div>
-            <div class="footer-links">
-                <p>Collections</p>
-                <p>Rooms</p>
-                <p>About</p>
-                <p>Contact</p>
-            </div>
-<div class="footer-copy">
-    <p>@2026 Maison.All rights reserved</p>
-</div>
-        </footer>
-        <marquee>masion-website</marquee>
+      </a>
+      <a href="rooms.html" class="img-card img-card-tall">
+        <img src="media-room.jpg.jpg" alt="Media Room"/>
+        <div class="img-overlay">
+          <div class="img-overlay-name">Media Room</div>
+          <div class="img-overlay-tag">TV Stand · Entertainment Unit</div>
+          <div class="img-overlay-price">From TZS 600,000</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="image-grid-2">
+      <a href="rooms.html" class="img-card img-card-wide">
+        <img src="reading-nook.jpg.jpg" alt="Reading Nook"/>
+        <div class="img-overlay">
+          <div class="img-overlay-name">Reading Nook</div>
+          <div class="img-overlay-tag">Study · Comfort · Style</div>
+          <div class="img-overlay-price">From TZS 450,000</div>
+        </div>
+      </a>
+      <a href="collections.html" class="img-card img-card-wide">
+        <img src="chair.pg.jpg" alt="Accent Chair"/>
+        <div class="img-overlay">
+          <div class="img-overlay-name">Accent Chair</div>
+          <div class="img-overlay-tag">Statement Pieces · Decor</div>
+          <div class="img-overlay-price">From TZS 350,000</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="cta-title">Ready to Transform<br>Your <em>Home?</em></h2>
+    <p class="cta-sub">Contact us today and let Maison Furniture Holders help you create the home of your dreams. Available 24/7 in Arusha, Tanzania.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-gold">Order Now</a>
+      <a href="collections.html" class="btn-outline">Browse Collections</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Maison Furniture Holders</div>
+    <div class="footer-copy">© 2026 Maison Furniture Holders — Arusha, Tanzania. All rights reserved.</div>
+  </footer>
+
 </body>
-    </body>
 </html>
